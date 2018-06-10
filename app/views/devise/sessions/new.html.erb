@@ -1,15 +1,15 @@
-<h1> <span class="badge badge-secondary bg-dark col-sm-3 text-left">Log in</span></h1>
+<h1><span class="badge badge-secondary bg-dark col-sm-3 text-left">Log in</span></h1>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %><br/>
     <%= f.email_field :email, {autofocus: true, autocomplete: "email", class: "form-control col-sm-3"} %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password,{ autocomplete: "off", class: "form-control col-sm-3" }%>
+    <%= f.label :password %><br/>
+    <%= f.password_field :password, {autocomplete: "off", class: "form-control col-sm-3"} %>
   </div>
   <br>
   <% if devise_mapping.rememberable? -%>
@@ -20,7 +20,7 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in", { class: "btn btn-primary btn-lg col-sm-3 bg-success"} %>
+    <%= f.submit "Log in", {class: "btn btn-primary btn-lg col-sm-3 bg-success"} %>
   </div>
 <% end %>
 <%= render "devise/shared/links" %>

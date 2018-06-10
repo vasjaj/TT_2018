@@ -1,23 +1,23 @@
-<h1><h1><span class="badge badge-secondary col-sm-12 bg-dark text-left ">All items</span></h1></h1>
+<h1><span class="badge badge-secondary col-sm-12 bg-dark text-left ">All items</span></h1>
 <table class="table table-striped">
   <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Created by</th>
-      <th scope="col"></th>
-    </tr>
+  <tr>
+    <th scope="col">Title</th>
+    <th scope="col">Created by</th>
+    <th scope="col"></th>
+  </tr>
   </thead>
   <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <% if item.user %>
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.title %></td>
+      <% if item.user %>
         <td><%= item.user.email %></td>
-        <% else %>
+      <% else %>
         <td>Anonymous user</td>
-        <% end %>
-        <td><%= link_to 'Show', item_path(item), {class: "btn btn-primary bg-secondary col-sm-6"} %></td>
-      </tr>
-    <% end %>
+      <% end %>
+      <td><%= link_to 'Show', item_path(item), {class: "btn btn-primary bg-secondary col-sm-6"} %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>

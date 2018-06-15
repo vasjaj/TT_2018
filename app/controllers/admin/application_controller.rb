@@ -9,7 +9,11 @@ module Admin
     before_action :authenticate_admin
 
     def authenticate_admin
-      # TODO Add authentication logic here.
+      if current_user.nil?
+        redirect_to new_user_session_path
+      else
+        redirect_to new_user_session_path and return unless current_user.is_admin?
+      end
     end
 
     # Override this value to specify the number of elements to display at a time

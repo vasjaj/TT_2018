@@ -24,6 +24,9 @@
         </br>
         <%= link_to "Create new item", {:controller => '/items', :action => :new}, {class: "btn btn-primary btn-lg btn-block col-sm-12 bg-secondary  "} %>
         </br>
+        </br>
+        <%= link_to "Admin panel", {:controller => '/admin/users'}, {class: "btn btn-danger btn-lg btn-block col-sm-12 "} %>
+        </br>
         <h4>
           <% if user_signed_in? %>
             <h2>

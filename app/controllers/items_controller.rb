@@ -44,30 +44,34 @@ class ItemsController < ApplicationController
 
   def delivery
     @item = Item.find(params[:id])
-    @item.delivered_by = current_user.id if current_user
-    @item.save!
-    redirect_to items_path
+    unless @item.delivered_by
+      @item.delivered_by = current_user.id if current_user
+      @item.save!
+    end
+    redirect_to @item
   end
 
   def delivery_refuse
     @item = Item.find(params[:id])
-    @item.delivered_by = nil
+    @item.delivered_by = nil if @item.delivered_by = current_user.id
     @item.save!
-    redirect_to items_path
+    redirect_to @item
   end
 
   def buy
     @item = Item.find(params[:id])
-    @item.delivered_by = current_user.id if current_user
-    @item.save!
-    redirect_to items_path
+    unless @item.bought_by
+      @item.bought_by = current_user.id if current_user
+      @item.save!
+    end
+    redirect_to @item
   end
 
   def buy_refuse
     @item = Item.find(params[:id])
-    @item.bought_by = nil
+    @item.bought_by = nil if @item.bought_by = current_user.id
     @item.save!
-    redirect_to items_path
+    redirect_to @item
   end
   private
 

@@ -38,10 +38,10 @@
                 <%= link_to "Logout", destroy_user_session_path, {method: :delete, class: "btn btn-danger btn-lg col-sm-12"} %>
                 </br>
                 </br>
-                <%= link_to "Taken for delivery", users_delivery_path, {method: :get, class: "btn btn-danger btn-lg col-sm-12"} %>
+                <%= link_to "Taken for delivery", users_delivery_path, {method: :get, class: "btn btn-success btn-lg col-sm-12"} %>
                 </br>
                 </br>
-                <%= link_to "Bought items", users_buy_path, {method: :get, class: "btn btn-danger btn-lg col-sm-12"} %>
+                <%= link_to "Bought items", users_buy_path, {method: :get, class: "btn btn-success  btn-lg col-sm-12"} %>
                 </br>
           <% else %>
             <%= link_to "Sign up", new_user_registration_path, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>

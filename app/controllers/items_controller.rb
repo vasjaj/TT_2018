@@ -51,6 +51,7 @@ class ItemsController < ApplicationController
   end
 
   def delivery
+    redirect_to new_user_session_path and return unless current_user
     @item = Item.find(params[:id])
     unless @item.delivered_by
       @item.delivered_by = current_user.id if current_user
@@ -67,6 +68,7 @@ class ItemsController < ApplicationController
   end
 
   def buy
+    redirect_to new_user_session_path and return unless current_user
     @item = Item.find(params[:id])
     unless @item.bought_by
       @item.bought_by = current_user.id if current_user

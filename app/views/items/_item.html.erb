@@ -1,6 +1,6 @@
 <div class="card-body">
   <h3 class="card-title">Title: <%= item.title %></h3>
-  <h3 class="card-title">Posted by: <%= item.user %></h3>
+  <h3 class="card-title">Posted by: <%= item.user.email if item.user %></h3>
   <h3 class="card-title">Delivered by: <%= User.find(item.delivered_by).email if item.delivered_by%></h3>
   <h3 class="card-title">Bought by: <%= User.find(item.bought_by).email if item.bought_by%></h3>
   <p class="card-text text-left">Description: <%= item.description %></p>

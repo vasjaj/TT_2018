@@ -1,6 +1,12 @@
 <div class="card-body">
   <h3 class="card-title"><%= item.title %></h3>
+  <h3 class="card-title">Posted by: <%= item.user %></h3>
+  <h3 class="card-title">Delivered by: <%= User.find(item.delivered_by).email if item.delivered_by%></h3>
   <p class="card-text text-left"><%= item.description %></p>
   <%= image_tag(item.image.url, {class: "img-thumbnail item-image"}) %>
+  <%= link_to "Deliver item", { :controller => :items , :action => :delivery }, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
+  <% if item.delivered_by == current_user.id %>
+    <%= link_to "UnDeliver item", { :controller => :items , :action => :delivery_refuse }, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
+  <% end %>
   <!--<%= link_to "Back", items_path, :class => "btn btn-secondary" %> -->
 </div>

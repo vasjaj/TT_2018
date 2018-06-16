@@ -42,6 +42,19 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
+  def delivery
+    @item = Item.find(params[:id])
+    @item.delivered_by = current_user.id if current_user
+    @item.save!
+    redirect_to items_path
+  end
+
+  def delivery_refuse
+    @item = Item.find(params[:id])
+    @item.delivered_by = nil
+    @item.save!
+    redirect_to items_path
+  end
   private
 
   def item_params

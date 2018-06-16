@@ -1,0 +1,16 @@
+<% if current_user %>
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.title %></td>
+      <% if item.user %>
+        <td><%= item.user.email %></td>
+      <% else %>
+        <td>Anonymous user</td>
+      <% end %>
+      <td><%= link_to 'Show', item_path(item), {class: "btn btn-primary bg-secondary col-sm-6"} %></td>
+    </tr>
+  <% end %>
+<% else %>
+  <p>No items </p>
+
+<% end %>

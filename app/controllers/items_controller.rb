@@ -14,10 +14,21 @@ class ItemsController < ApplicationController
 
   def without_delivery
     @items = Item.where(delivered_by: nil)
+    if params[:search]
+      @items = Item.search(params[:search]).order("created_at DESC").where(delivered_by: nil)
+    else
+      @items = Item.where(delivered_by: nil).order("created_at DESC")
+    end
   end
 
   def without_buy
     @items = Item.where(bought_by: nil)
+    if params[:search]
+      @items = Item.search(params[:search]).order("created_at DESC").where(bought_by: nil)
+      #binding.pry
+    else
+      @items = Item.where(bought_by: nil).order("created_at DESC")
+    end
   end
 
   def show

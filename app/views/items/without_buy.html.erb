@@ -1,4 +1,8 @@
 <h1><span class="badge badge-secondary col-sm-12 bg-dark text-left ">Available items</span></h1>
+<%= form_tag(items_without_buy_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
 <table class="table table-striped">
   <thead>
   <tr>

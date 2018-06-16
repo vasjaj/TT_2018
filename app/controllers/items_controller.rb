@@ -4,6 +4,14 @@ class ItemsController < ApplicationController
     #binding.pry
   end
 
+  def without_delivery
+    @items = Item.where(delivered_by: nil)
+  end
+
+  def without_buy
+    @items = Item.where(bought_by: nil)
+  end
+
   def show
     @item = Item.find(params[:id])
   end

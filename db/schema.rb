@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_15_192502) do
+ActiveRecord::Schema.define(version: 2018_06_16_115809) do
 
   create_table "items", force: :cascade do |t|
     t.string "title"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2018_06_15_192502) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string "bg_color", default: "white", null: false
+    t.integer "font_size", default: 1, null: false
+    t.string "font_style"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_styles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

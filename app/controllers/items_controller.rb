@@ -55,6 +55,20 @@ class ItemsController < ApplicationController
     @item.save!
     redirect_to items_path
   end
+
+  def buy
+    @item = Item.find(params[:id])
+    @item.delivered_by = current_user.id if current_user
+    @item.save!
+    redirect_to items_path
+  end
+
+  def buy_refuse
+    @item = Item.find(params[:id])
+    @item.bought_by = nil
+    @item.save!
+    redirect_to items_path
+  end
   private
 
   def item_params

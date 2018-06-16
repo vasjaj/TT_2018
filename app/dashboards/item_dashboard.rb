@@ -18,6 +18,8 @@ class ItemDashboard < Administrate::BaseDashboard
     image_content_type: Field::String,
     image_file_size: Field::Number,
     image_updated_at: Field::DateTime,
+    delivered_by: Field::Number,
+    bought_by: Field::Number,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -45,6 +47,8 @@ class ItemDashboard < Administrate::BaseDashboard
     :image_content_type,
     :image_file_size,
     :image_updated_at,
+    :delivered_by,
+    :bought_by,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -58,6 +62,8 @@ class ItemDashboard < Administrate::BaseDashboard
     :image_content_type,
     :image_file_size,
     :image_updated_at,
+    :delivered_by,
+    :bought_by,
   ].freeze
 
   # Overwrite this method to customize how items are displayed

@@ -26,6 +26,24 @@ ActiveRecord::Schema.define(version: 2018_06_16_140423) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "keywords", force: :cascade do |t|
+    t.string "word", null: false
+    t.integer "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_keywords_on_item_id"
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string "bg_color", default: "white", null: false
+    t.integer "font_size", default: 1, null: false
+    t.string "font_style"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_styles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -40,6 +58,9 @@ ActiveRecord::Schema.define(version: 2018_06_16_140423) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "role"
+    t.string "phone"
+    t.string "name"
+    t.string "lastname"
   end
 
 end

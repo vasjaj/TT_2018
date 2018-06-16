@@ -1,4 +1,15 @@
-<% if current_user %>
+<h1><span class="badge badge-secondary col-sm-12 bg-dark text-left ">Taken for delivery by me</span></h1>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Title</th>
+    <th scope="col">Created by</th>
+    <th scope="col">Bought by</th>
+    <th scope="col">Delivered by</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
   <% @items.each do |item| %>
     <tr>
       <td><%= item.title %></td>
@@ -7,10 +18,21 @@
       <% else %>
         <td>Anonymous user</td>
       <% end %>
+
+      <% if item.bought_by %>
+        <td><%= User.find(item.bought_by).email %></td>
+      <% else %>
+        <td> - </td>
+      <% end %>
+
+      <% if item.delivered_by %>
+        <td><%= User.find(item.delivered_by).email %></td>
+      <% else %>
+        <td> - </td>
+      <% end %>
+
       <td><%= link_to 'Show', item_path(item), {class: "btn btn-primary bg-secondary col-sm-6"} %></td>
     </tr>
   <% end %>
-<% else %>
-  <p>No items </p>
-
-<% end %>
+  </tbody>
+</table>

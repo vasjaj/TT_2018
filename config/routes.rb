@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'items/:id/buy_refuse' => 'items#buy_refuse', as: :items_buy_refuse
   get 'users/delivery' => 'users#delivery', as: :users_delivery
   get 'users/buy' => 'users#buy', as: :users_buy
+  get 'users/my_items' => 'users#my_items', as: :users_my_items
   resources :items
   #do
   #   collection do

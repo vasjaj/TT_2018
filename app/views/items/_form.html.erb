@@ -23,17 +23,17 @@
 
   </p>
   <p>
-    <%= form.label :title %><br>
+    <%= form.label t(:title.downcase) %><br>
     <%= form.text_field :title, {class: "form-control col-sm-6", placeholder: t('newItemTitle')} %>
   </p>
 
   <p>
-    <%= form.label :description %><br>
+    <%= form.label t(:description.downcase) %><br>
     <%= form.text_area :description, {class: "form-control col-sm-6", rows: 10, placeholder: t('description')} %>
   </p>
 
   <p>
-    <%= form.label :image %>
+    <%= form.label t(:image.downcase) %>
     <%= form.file_field :image %>
   </p>
 

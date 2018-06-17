@@ -50,13 +50,11 @@
         <%= link_to t('createNewItem'), {:controller => '/items', :action => :new}, {class: "btn btn-primary btn-lg btn-block col-sm-12 bg-secondary  "} %>
         </br>
         <% if user_signed_in? && current_user.is_admin?%>
-          </br>
           <%= link_to t('adminPanel'), {:controller => '/admin/users'}, {class: "btn btn-danger btn-lg btn-block col-sm-12 "} %>
           </br>
         <% end %>
         <h4>
           <% if user_signed_in? %>
-            </br>
             <%= link_to t('editProfile'), edit_user_registration_path, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
             </br>
             </br>

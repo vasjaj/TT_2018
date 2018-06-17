@@ -21551,6 +21551,7 @@ Processing by Admin::LogsController#show as HTML
 Completed 200 OK in 76ms (Views: 66.8ms | ActiveRecord: 1.1ms)
 
 
+<<<<<<< Updated upstream
 Started GET "/?locale=en" for 127.0.0.1 at 2018-06-17 20:34:53 +0300
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by ItemsController#index as HTML
@@ -21620,5 +21621,133 @@ Processing by ItemsController#index as HTML
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   Rendered items/index.html.erb within layouts/application (19.6ms)
 Completed 200 OK in 87ms (Views: 83.1ms | ActiveRecord: 3.1ms)
+=======
+Started GET "/" for 127.0.0.1 at 2018-06-17 20:31:47 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (114.1ms)
+Completed 200 OK in 567ms (Views: 548.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-17 20:31:50 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (6.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 85ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-17 20:31:54 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Fq8uBkRkKZS8P3T8+0+ygq/7Ey7IpLVjJDjk9bcR/rrQsgcssxPd59ifczEfY4u/1P2eYesGtpmiMZYkrvpGAA==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Ieiet"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLog Create (2.5ms)[0m  [1m[32mINSERT INTO "logs" ("changed_at", "field", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["changed_at", "2018-06-17 17:31:54.875074"], ["field", "{\"current_sign_in_at\"=>[Sun, 17 Jun 2018 17:24:53 UTC +00:00, Sun, 17 Jun 2018 17:31:54 UTC +00:00], \"last_sign_in_at\"=>[Sun, 17 Jun 2018 17:08:01 UTC +00:00, Sun, 17 Jun 2018 17:24:53 UTC +00:00], \"sign_in_count\"=>[12, 13]}"], ["created_at", "2018-06-17 17:31:54.876084"], ["updated_at", "2018-06-17 17:31:54.876084"]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-06-17 17:31:54.868261"], ["last_sign_in_at", "2018-06-17 17:24:53.119005"], ["sign_in_count", 13], ["updated_at", "2018-06-17 17:31:54.880167"], ["id", 2]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 192ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-17 20:31:54 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/delivery" for 127.0.0.1 at 2018-06-17 20:31:57 +0300
+Processing by UsersController#delivery as HTML
+  Parameters: {"authenticity_token"=>"u1HTsPtoWQlNrM0qB6qe0l7JKhofP42LCazWV2f53LN/hADDo5l2BmPvnDPbYx1427v8FvxG9atklNOPBbj5XQ=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/delivery.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."delivered_by" = ?[0m  [["delivered_by", 2]]
+  Rendered users/delivery.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 94ms (Views: 80.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/buy" for 127.0.0.1 at 2018-06-17 20:31:58 +0300
+Processing by UsersController#buy as HTML
+  Parameters: {"authenticity_token"=>"bFLyms4H/M+oAePPpN0LEiMaXIxMhkuBYm8gUSH8SFiohyHplvbTwIZCstZ4FIi4pmiKgK//M6EPVyWJQ71ttg=="}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/buy.html.erb within layouts/application
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."bought_by" = ?[0m  [["bought_by", 2]]
+  Rendered users/buy.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 95ms (Views: 84.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users/my_items" for 127.0.0.1 at 2018-06-17 20:31:59 +0300
+Processing by UsersController#my_items as HTML
+  Parameters: {"authenticity_token"=>"bAEOpQKIgQHT8z0JjeNBPcHKhx8a5+vM2LHNtgAPtOOo1N3WWnmuDv2wbBBRKsKXRLhRE/mek+y1ichuYk6RDQ=="}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/my_items.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered users/my_items.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 106ms (Views: 87.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2018-06-17 20:32:01 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/index.html.erb within layouts/administrate/application
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_search.html.erb (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" IN (?, ?, ?)[0m  [["user_id", 1], ["user_id", 2], ["user_id", 3]]
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/has_many/_index.html.erb (0.6ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/number/_index.html.erb (0.5ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (1.1ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.1ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/has_many/_index.html.erb (0.1ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/number/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/has_many/_index.html.erb (0.1ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/number/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.2ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_collection.html.erb (29.9ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/index.html.erb within layouts/administrate/application (44.6ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_stylesheet.html.erb (7.6ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_icons.erb (0.3ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_navigation.html.erb (1.9ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_flashes.html.erb (0.4ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_javascript.html.erb (26.0ms)
+Completed 200 OK in 119ms (Views: 102.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2018-06-17 20:32:01 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/index.html.erb within layouts/administrate/application
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_search.html.erb (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" IN (?, ?, ?)[0m  [["user_id", 1], ["user_id", 2], ["user_id", 3]]
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/has_many/_index.html.erb (0.4ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/number/_index.html.erb (0.4ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.4ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.1ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/has_many/_index.html.erb (0.1ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/number/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/has_many/_index.html.erb (0.1ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/number/_index.html.erb (0.1ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_collection.html.erb (25.7ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/index.html.erb within layouts/administrate/application (37.9ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_stylesheet.html.erb (4.6ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_icons.erb (0.3ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_navigation.html.erb (2.6ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_flashes.html.erb (0.7ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_javascript.html.erb (11.0ms)
+Completed 200 OK in 81ms (Views: 78.2ms | ActiveRecord: 0.6ms)
+>>>>>>> Stashed changes
 
 

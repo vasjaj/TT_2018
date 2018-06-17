@@ -26,11 +26,28 @@
         <button type="button" class="btn btn-primary btn-lg btn-block bg-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Language
         </button>
-        <div class="dropdown-menu ">
-          <a class="dropdown-item" href="#"><%= link_to "English", {:locale => 'en'} %></a>
-          <a class="dropdown-item" href="#"><%= link_to "Latvian", {:locale => 'lv'} %></a>
-          <a class="dropdown-item" href="#"><%= link_to "Russian", {:locale => 'ru'} %></a>
+        <div class="dropdown-menu" style="margin-right: 10px; background-color: indigo">
+          <a class="dropdown-item" href="#"><%= link_to "English", {:locale => 'en'}, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %></a>
+          <a class="dropdown-item" href="#"><%= link_to "Latvian", {:locale => 'lv'}, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %></a>
+          <a class="dropdown-item" href="#"><%= link_to "Russian", {:locale => 'ru'}, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %></a>
         </div>
+      </div>
+    </div>
+    <div class="btn-group" style="float: right; margin-right: 10px">
+      <button type="button" class="btn btn-primary btn-lg btn-block bg-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= t('user') %>
+      </button>
+      <div class="dropdown-menu" style="margin-right: 10px; background-color: indigo">
+        <% if user_signed_in? && current_user.is_admin? %>
+          <a class="dropdown-item" href="#"><%= link_to t('adminPanel'), {:controller => '/admin/users'}, {class: "btn btn-danger btn-lg btn-block col-sm-12 "} %></a>
+        <% end %>
+        <% if user_signed_in? %>
+          <a class="dropdown-item" href="#"><%= link_to t('editProfile'), edit_user_registration_path, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %></a>
+          <a class="dropdown-item" href="#"><%= link_to t('logOut'), destroy_user_session_path, {method: :delete, class: "btn btn-danger btn-lg col-sm-12"} %></a>
+        <% else %>
+          <a class="dropdown-item" href="#"><%= link_to t('signUp'), new_user_registration_path, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %></a>
+          <a class="dropdown-item" href="#"><%= link_to t('logIn'), new_user_session_path, {class: "btn btn-success btn-lg col-sm-12"} %></a>
+        <% end %>
       </div>
     </div>
   </div>
@@ -49,18 +66,8 @@
         </br>
         <%= link_to t('createNewItem'), {:controller => '/items', :action => :new}, {class: "btn btn-primary btn-lg btn-block col-sm-12 bg-secondary  "} %>
         </br>
-        <% if user_signed_in? && current_user.is_admin?%>
-          <%= link_to t('adminPanel'), {:controller => '/admin/users'}, {class: "btn btn-danger btn-lg btn-block col-sm-12 "} %>
-          </br>
-        <% end %>
         <h4>
           <% if user_signed_in? %>
-            <%= link_to t('editProfile'), edit_user_registration_path, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
-            </br>
-            </br>
-            <%= link_to t('logOut'), destroy_user_session_path, {method: :delete, class: "btn btn-danger btn-lg col-sm-12"} %>
-            </br>
-            </br>
             <%= link_to t('myItems'), users_my_items_path, {method: :get, class: "btn btn-success  btn-lg col-sm-12"} %>
             </br>
             </br>
@@ -68,13 +75,6 @@
             </br>
             </br>
             <%= link_to t('boughtItems'), users_buy_path, {method: :get, class: "btn btn-success  btn-lg col-sm-12"} %>
-            </br>
-
-          <% else %>
-            <%= link_to t('signUp'), new_user_registration_path, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
-            </br>
-            </br>
-            <%= link_to t('logIn'), new_user_session_path, {class: "btn btn-success btn-lg col-sm-12"} %>
             </br>
           <% end %>
         </h4>

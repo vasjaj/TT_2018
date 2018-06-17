@@ -13,24 +13,33 @@
 
 <body>
 
+<div class="row top-container btn-danger">
+  <div class="col-sm-12" style="margin-top: 10px">
+    <h1 style="float: left; left: 50%; position: relative">Shop</h1>
+    <% if user_signed_in? %>
+      <div style="float: left">
+        <p><%= t('loggedInAs') %> <br> <%= current_user.email %></p>
+      </div>
+    <% end %>
+    <div>
+      <div class="btn-group" style="float: right; margin-right: 10px">
+        <button type="button" class="btn btn-primary btn-lg btn-block bg-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Language
+        </button>
+        <div class="dropdown-menu ">
+          <a class="dropdown-item" href="#"><%= link_to "English", {:locale => 'en'} %></a>
+          <a class="dropdown-item" href="#"><%= link_to "Latvian", {:locale => 'lv'} %></a>
+          <a class="dropdown-item" href="#"><%= link_to "Russian", {:locale => 'ru'} %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-2">
       <div class="sidenav">
-        </br>
-        <h1><span class="badge badge-secondary col-sm-12 bg-danger">Shop</span></h1>
-        </br>
-        <div class="btn-group col-sm-12">
-          <button type="button" class="btn btn-primary btn-lg btn-block col-sm-12 bg-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Language
-          </button>
-          <div class="dropdown-menu ">
-            <a class="dropdown-item" href="#"><%= link_to "English", {:locale => 'en'} %></a>
-            <a class="dropdown-item" href="#"><%= link_to "Latvian", {:locale => 'lv'} %></a>
-            <a class="dropdown-item" href="#"><%= link_to "Russian", {:locale => 'ru'} %></a>
-          </div>
-        </div>
-        </br>
         </br>
         <%= link_to t('allItems'), {:controller => '/items', :action => :index}, {class: "btn btn-primary btn-lg btn-block col-sm-12 bg-secondary"} %>
         </br>
@@ -47,8 +56,6 @@
         <% end %>
         <h4>
           <% if user_signed_in? %>
-            <span class="badge badge-secondary col-sm-12 bg-danger"><%= t('loggedInAs') %><br> <%= current_user.email %></span>
-            </br>
             </br>
             <%= link_to t('editProfile'), edit_user_registration_path, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
             </br>

@@ -18,7 +18,7 @@ class User < ApplicationRecord
       log.changed_at = Time.now
       log.field = changes.to_s
       log.save!
-      binding.pry
+      #binding.pry
     end
   end
 end

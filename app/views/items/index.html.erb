@@ -1,9 +1,11 @@
 <h1><span class="badge badge-secondary col-sm-12 bg-dark text-left "><%= t('allItems') %></span></h1>
 
-<%= form_tag(items_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: t('searchItems') %>
-  <%= submit_tag t('search'), :name => nil %>
-<% end %>
+<div style="margin-bottom: 10px">
+  <%= form_tag(items_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: t('searchItems') %>
+    <%= submit_tag t('search'), :name => nil %>
+  <% end %>
+</div>
 
 <table class="table table-striped">
   <thead>

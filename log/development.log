@@ -21551,3 +21551,74 @@ Processing by Admin::LogsController#show as HTML
 Completed 200 OK in 76ms (Views: 66.8ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/?locale=en" for 127.0.0.1 at 2018-06-17 20:34:53 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (2.5ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (243.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 769ms (Views: 748.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-17 20:35:02 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 140ms (Views: 138.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2018-06-17 20:35:05 +0300
+Processing by Admin::UsersController#index as HTML
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :authenticate_admin rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-17 20:35:05 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (12.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 93ms (Views: 91.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/without_buy" for 127.0.0.1 at 2018-06-17 20:35:07 +0300
+Processing by ItemsController#without_buy as HTML
+  Rendering items/without_buy.html.erb within layouts/application
+  [1m[36mItem Load (4.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."bought_by" IS NULL ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/without_buy.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 68ms (Views: 61.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2018-06-17 20:35:08 +0300
+Processing by ItemsController#new as HTML
+  Rendering items/new.html.erb within layouts/application
+  Rendered items/_form.html.erb (4.3ms)
+  Rendered items/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/without_delivery" for 127.0.0.1 at 2018-06-17 20:35:10 +0300
+Processing by ItemsController#without_delivery as HTML
+  Rendering items/without_delivery.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."delivered_by" IS NULL ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/without_delivery.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 80ms (Views: 74.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-17 20:35:12 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (2.9ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 87ms (Views: 83.1ms | ActiveRecord: 3.1ms)
+
+

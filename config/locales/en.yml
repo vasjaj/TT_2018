@@ -31,6 +31,7 @@
 
 en:
   user: "User"
+  author: "Author"
   allItems: "All items"
   itemsWithoutDelivery: "Items without delivery"
   availableItems: "Available items"

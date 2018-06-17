@@ -1,5 +1,6 @@
 lv:
   user: "Profils"
+  author: "Autors"
   allItems: "Visi produkti"
   itemsWithoutDelivery: "Produkti bez piegādātāja"
   availableItems: "Pieejamie produkti"

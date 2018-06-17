@@ -3,6 +3,7 @@ Rails.application.routes.draw do
       resources :users
       resources :items
       resources :logs
+      resources :faq
       root to: "users#index"
     end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   get 'users/delivery' => 'users#delivery', as: :users_delivery
   get 'users/buy' => 'users#buy', as: :users_buy
   get 'users/my_items' => 'users#my_items', as: :users_my_items
+  get 'faq' => 'faq#faq', as: :faq
   resources :items
   #do
   #   collection do

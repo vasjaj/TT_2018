@@ -55,3 +55,12 @@ lv:
   publish: "Publicēt"
   error: "aizslēdza šo vienumu saglabāt:"
   image: "Zimējums"
+  faq1: "1) Kas ir šī vietne?
+  - Palīdz savākt kopā pircēju, pārdevēju un kurjeru, kas piegādā sūtījumu."
+  faq2: "2) Kā izkārtot preces?
+  - Vienkārši reģistrējieties, nospiediet uz pogas, lai ievietotu preces, ievadiet visu informāciju un gaidiet, līdz tiek izvēlēts."
+  faq3: "3) Kā nopirkt?
+  - Noklikšķiniet uz pogas 'Rādīt' jebkuram produktam un uz priekšu pirkumam!"
+  faq4: "4) Vai es varu kļūt par kurjeru?
+  - Ikviens var kļūt par kurjeru, jums vienkārši ir jāreģistrējas, nu un arī nedaudz vēlmes."
+

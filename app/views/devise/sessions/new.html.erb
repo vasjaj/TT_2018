@@ -1,4 +1,4 @@
-<h1><span class="badge badge-secondary bg-dark col-sm-3 text-left">Log in</span></h1>
+<h1><span class="badge badge-secondary bg-dark col-sm-3 text-left"><%= t('logIn') %></span></h1>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -20,7 +20,7 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in", {class: "btn btn-primary btn-lg col-sm-3 bg-success"} %>
+    <%= f.submit t('logIn'), {class: "btn btn-primary btn-lg col-sm-3 bg-success"} %>
   </div>
 <% end %>
 <%= render "devise/shared/links" %>

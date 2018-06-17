@@ -20,58 +20,66 @@
         </br>
         <h1><span class="badge badge-secondary col-sm-12 bg-danger">Shop</span></h1>
         </br>
-        <%= link_to "All items", {:controller => '/items', :action => :index}, {class: "btn btn-primary btn-lg btn-block col-sm-12 bg-secondary"} %>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary btn-lg btn-block col-sm-12 bg-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Language
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#"><%= link_to "English", {:locale => 'en'} %></a>
+            <a class="dropdown-item" href="#"><%= link_to "Latvian", {:locale => 'lv'} %></a>
+            <a class="dropdown-item" href="#"><%= link_to "Russian", {:locale => 'ru'} %></a>
+            <a class="dropdown-item" href="#"><%= link_to "Portuguese", {:locale => 'pt'} %></a>
+          </div>
+        </div>
         </br>
-        <%= link_to "Items without delivery", {:controller => '/items', :action => :without_delivery}, {class: "btn btn-primary btn-lg btn-block col-sm-12 bg-secondary"} %>
         </br>
-        <%= link_to "Available items", {:controller => '/items', :action => :without_buy}, {class: "btn btn-primary btn-lg btn-block col-sm-12 bg-secondary"} %>
+        <%= link_to t('allItems'), {:controller => '/items', :action => :index}, {class: "btn btn-primary btn-lg btn-block col-sm-12 bg-secondary"} %>
         </br>
-        <%= link_to "Create new item", {:controller => '/items', :action => :new}, {class: "btn btn-primary btn-lg btn-block col-sm-12 bg-secondary  "} %>
+        <%= link_to t('itemsWithoutDelivery'), {:controller => '/items', :action => :without_delivery}, {class: "btn btn-primary btn-lg btn-block col-sm-12 bg-secondary"} %>
+        </br>
+        <%= link_to t('availableItems'), {:controller => '/items', :action => :without_buy}, {class: "btn btn-primary btn-lg btn-block col-sm-12 bg-secondary"} %>
+        </br>
+        <%= link_to t('createNewItem'), {:controller => '/items', :action => :new}, {class: "btn btn-primary btn-lg btn-block col-sm-12 bg-secondary  "} %>
         </br>
         </br>
-        <%= link_to "Admin panel", {:controller => '/admin/users'}, {class: "btn btn-danger btn-lg btn-block col-sm-12 "} %>
+        <%= link_to t('adminPanel'), {:controller => '/admin/users'}, {class: "btn btn-danger btn-lg btn-block col-sm-12 "} %>
         </br>
         <h4>
           <% if user_signed_in? %>
-              <span class="badge badge-secondary col-sm-12 bg-danger">Logged in as: <br> <%= current_user.email %></span>
-                </br>
-                </br>
-                <%= link_to "Edit profile", edit_user_registration_path, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
-                </br>
-                </br>
-                <%= link_to "Logout", destroy_user_session_path, {method: :delete, class: "btn btn-danger btn-lg col-sm-12"} %>
-                </br>
-                </br>
-                <%= link_to "My items", users_my_items_path, {method: :get, class: "btn btn-success  btn-lg col-sm-12"} %>
-                </br>
-                </br>
-                <%= link_to "Taken for delivery", users_delivery_path, {method: :get, class: "btn btn-success btn-lg col-sm-12"} %>
-                </br>
-                </br>
-                <%= link_to "Bought items", users_buy_path, {method: :get, class: "btn btn-success  btn-lg col-sm-12"} %>
-                </br>
+            <span class="badge badge-secondary col-sm-12 bg-danger"><%= t('loggedInAs') %><br> <%= current_user.email %></span>
+            </br>
+            </br>
+            <%= link_to t('editProfile'), edit_user_registration_path, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
+            </br>
+            </br>
+            <%= link_to t('logOut'), destroy_user_session_path, {method: :delete, class: "btn btn-danger btn-lg col-sm-12"} %>
+            </br>
+            </br>
+            <%= link_to t('myItems'), users_my_items_path, {method: :get, class: "btn btn-success  btn-lg col-sm-12"} %>
+            </br>
+            </br>
+            <%= link_to t('takenForDelivery'), users_delivery_path, {method: :get, class: "btn btn-success btn-lg col-sm-12"} %>
+            </br>
+            </br>
+            <%= link_to t('boughtItems'), users_buy_path, {method: :get, class: "btn btn-success  btn-lg col-sm-12"} %>
+            </br>
 
           <% else %>
-            <%= link_to "Sign up", new_user_registration_path, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
+            <%= link_to t('signUp'), new_user_registration_path, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
             </br>
             </br>
-            <%= link_to "Login", new_user_session_path, {class: "btn btn-success btn-lg col-sm-12"} %>
+            <%= link_to t('logIn'), new_user_session_path, {class: "btn btn-success btn-lg col-sm-12"} %>
             </br>
           <% end %>
         </h4>
-        <p> Current locale: <%= locale %> </p>
-        <%= link_to "English", { :locale=>'en' } %>
-        <%= link_to "Latvian", { :locale=>'lv' } %>
-        <%= link_to "Russian", { :locale=>'ru' } %>
-
-
-
       </div>
     </div>
 
     <div class="col-sm-10">
       <%= yield %>
     </div>
+  </div>
+</div>
 
 </body>
 </html>

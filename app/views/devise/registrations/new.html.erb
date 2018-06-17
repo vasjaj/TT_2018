@@ -1,4 +1,4 @@
-<h1><span class="badge badge-secondary bg-dark col-sm-3 text-left">Sign up</span></h1>
+<h1><span class="badge badge-secondary bg-dark col-sm-3 text-left"><%= t('signUp') %></span></h1>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -22,7 +22,7 @@
   <br>
 
   <div class="actions">
-    <%= f.submit "Sign up", {class: "btn btn-primary btn-lg col-sm-3 bg-success"} %>
+    <%= f.submit t('signUp'), {class: "btn btn-primary btn-lg col-sm-3 bg-success"} %>
   </div>
 <% end %>
 

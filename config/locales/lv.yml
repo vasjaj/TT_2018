@@ -16,7 +16,7 @@ lv:
   myItems: "Mani produkti"
   takenForDelivery: "Ņemts piegādei"
   takenForDeliveryByMe: "Es paņemu piegādei"
-  bougtItems: "Nopirktie produkti"
+  boughtItems: "Nopirktie produkti"
   searchItems: "Meklēt produktus"
   search: "Meklēt"
   title: "Virsraksts"

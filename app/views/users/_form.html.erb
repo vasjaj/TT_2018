@@ -1,12 +1,13 @@
-<%= form_with model: @user, local: true do |form| %>
 
-  <% if @item.errors.any? %>
+<%= form_for(@user, url: users_profile_path, method: :get) do |form| %>
+
+  <% if @user.errors.any? %>
     <div id="error_explanation" style="margin-top: 10px;">
       <h2>
         <%= pluralize(@user.errors.count, "error") %> <%= t('error') %>
       </h2>
       <ul>
-        <% @item.errors.full_messages.each do |msg| %>
+        <% @user.errors.full_messages.each do |msg| %>
           <li class="bg-danger text-white"><%= msg %></li>
         <% end %>
       </ul>
@@ -27,15 +28,7 @@
     <%= form.label :role %>
     <%= form.text_field :role %>
   </p>
-
-
-    <div class="field">
-      <p><%= t("chooseRole") %></p>
-      <%= select(:user, :role, [[t('courier'), "courier"], [t('user2'), "user"]]) %>
-    </div>
-    <br>
   <p>
     <%= form.submit t('publish'), {class: "btn btn-primary btn-lg col-sm-6 bg-secondary"} %>
   </p>
-
-<% end %>
+<%end%>

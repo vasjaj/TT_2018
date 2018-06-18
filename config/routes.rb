@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'items#index'
   devise_for :users
-  get 'users/:id/edit'=> 'users#edit', as: :users_edit
+  
+  get 'users/:id/profile'=> 'users#profile', as: :users_profile
   get 'items/without_delivery' => 'items#without_delivery', as: :items_without_delivery
   get 'items/without_buy' => 'items#without_buy', as: :items_without_buy
   get 'items/:id/delivery' => 'items#delivery', as: :items_delivery
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   get 'users/my_items' => 'users#my_items', as: :users_my_items
   get 'faq' => 'faq#faq', as: :faq
   resources :items
+  resource :users
   #do
   #   collection do
   #     get :delivery

@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     @items = current_user.items if current_user
   end
 
-  def edit
+  def profile
+    update if params[:commit] == "Publish"
     @user = User.find(params[:id])
   end
 
@@ -22,14 +23,14 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to @user
+      redirect_to users_profile_path
     else
-      render 'profile'
+      redirect_to users_profile_path
     end
   end
 
   def user_params
-    params.require(:item).permit(:role, :phone, :name, :lastname)
+    params.require(:user).permit(:role, :phone, :name, :lastname, :commit)
   end
 
 end

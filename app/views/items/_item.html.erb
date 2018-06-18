@@ -18,7 +18,7 @@
     <% if current_user and item.bought_by == current_user.id %>
       <%= link_to t('unbuyItem'), { :controller => :items , :action => :buy_refuse }, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
     <% else %>
-      <% if not item.delivered_by and not item.user_id == current_user.id%>
+      <% if !item.bought_by and current_user and item.user == current_user%>
         <%= link_to t('buyItem'), { :controller => :items , :action => :buy }, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
       <% end %>
     <% end %>

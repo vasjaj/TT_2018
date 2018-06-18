@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2018_06_18_012422) do
     t.datetime "image_updated_at"
     t.integer "delivered_by"
     t.integer "bought_by"
-    t.string "address_from", default: "", null: false
-    t.string "address_to"
+    t.string "adress_from", default: "", null: false
+    t.string "adress_to"
     t.decimal "price", null: false
     t.datetime "send_started"
     t.datetime "send_finished"

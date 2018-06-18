@@ -12,11 +12,10 @@
   <tr>
     <th scope="col"><%= t('title') %></th>
     <th scope="col"><%= t('createdBy') %></th>
-    <th scope="col"><%= t('boughtBy') %></th>
     <th scope="col"><%= t('addressFrom') %></th>
     <th scope="col"><%= t('addressTo') %></th>
     <th scope="col"><%= t('courierFee') %></th>
-    <th scope="col"></th>
+    <th scope="col">-------------------- </th>
   </tr>
   </thead>
   <tbody>
@@ -29,24 +28,17 @@
         <td><%= t('anonymousUser') %></td>
       <% end %>
 
-      <% if item.bought_by %>
-        <td><%= User.find(item.bought_by).email %></td>
-      <% else %>
-        <td> -</td>
-      <% end %>
-
       <% if item.adress_from %>
         <td><%= item.adress_from %></td>
       <% else %>
         <td> -</td>
       <% end %>
 
-      <% if item.adress_from %>
-        <td><%= item.adress_from %></td>
+      <% if item.adress_to %>
+        <td><%= item.adress_to %></td>
       <% else %>
         <td> -</td>
       <% end %>
-
       <% if item.courier_fee %>
         <td><%= item.courier_fee %></td>
       <% else %>

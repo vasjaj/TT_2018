@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-    update if params[:commit] == "Publish"
+    update if params[:commit]
     @user = User.find(params[:id])
   end
 

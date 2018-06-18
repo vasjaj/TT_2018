@@ -23,15 +23,9 @@
     <%= form.text_field :lastname, {class: "form-control col-sm-6", rows: 10, placeholder: "lastname"} %>
   </p>
 
-  <p>
-    <%= form.label t('role') %>
-    <%= form.text_field :role %>
-  </p>
-
-
     <div class="field">
       <p><%= t("chooseRole") %></p>
-      <%= select(:user, :role, [[t('courier'), "courier"], [t('user'), "user"]]) %>
+      <%= form.select :role,  [[t('courier'), "courier"], [t('user'), "user"]] %>
     </div>
     <br>
   <p>

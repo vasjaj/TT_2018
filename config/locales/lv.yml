@@ -1,4 +1,7 @@
 lv:
+  chooseRole: "Izvēlēties lomu"
+  user2: "Lietotājs"
+  courier: "Kurjers"
   user: "Profils"
   allItems: "Visi produkti"
   itemsWithoutDelivery: "Produkti bez piegādātāja"
@@ -63,4 +66,3 @@ lv:
   - Noklikšķiniet uz pogas 'Rādīt' jebkuram produktam un uz priekšu pirkumam!"
   faq4: "4) Vai es varu kļūt par kurjeru?
   - Ikviens var kļūt par kurjeru, jums vienkārši ir jāreģistrējas, nu un arī nedaudz vēlmes."
-

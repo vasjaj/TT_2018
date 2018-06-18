@@ -1,0 +1,41 @@
+<%= form_with model: @user, local: true do |form| %>
+
+  <% if @item.errors.any? %>
+    <div id="error_explanation" style="margin-top: 10px;">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> <%= t('error') %>
+      </h2>
+      <ul>
+        <% @item.errors.full_messages.each do |msg| %>
+          <li class="bg-danger text-white"><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, {class: "form-control col-sm-6", placeholder: "name"} %>
+  </p>
+
+  <p>
+    <%= form.label :lastname %><br>
+    <%= form.text_field :lastname, {class: "form-control col-sm-6", rows: 10, placeholder: "lastname"} %>
+  </p>
+
+  <p>
+    <%= form.label :role %>
+    <%= form.text_field :role %>
+  </p>
+
+
+    <div class="field">
+      <p><%= t("chooseRole") %></p>
+      <%= select(:user, :role, [[t('courier'), "courier"], [t('user2'), "user"]]) %>
+    </div>
+    <br>
+  <p>
+    <%= form.submit t('publish'), {class: "btn btn-primary btn-lg col-sm-6 bg-secondary"} %>
+  </p>
+
+<% end %>

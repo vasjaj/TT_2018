@@ -5,8 +5,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates_presence_of :role
+
   def is_admin?
     return true if role == "admin"
+    false
+  end
+
+  def is_courier?
+    return true if role == "courier"
     false
   end
 

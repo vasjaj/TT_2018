@@ -38,6 +38,16 @@
   </p>
 
   <p>
+    <%= form.label ('price' + ', EUR')%>
+    <%= form.number_field :price,  {min: "0.00", step:"0.01"} %>
+  </p>
+
+  <p>
+    <%= form.label :adress_from %>
+    <%= form.text_field :adress_from %>
+  </p>
+
+  <p>
     <%= form.submit t('publish'), {class: "btn btn-primary btn-lg col-sm-6 bg-secondary"} %>
   </p>
 

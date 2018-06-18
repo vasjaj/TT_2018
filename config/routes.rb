@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'items#index'
   devise_for :users
+  get 'users/:id/edit'=> 'users#edit', as: :users_edit
   get 'items/without_delivery' => 'items#without_delivery', as: :items_without_delivery
   get 'items/without_buy' => 'items#without_buy', as: :items_without_buy
   get 'items/:id/delivery' => 'items#delivery', as: :items_delivery

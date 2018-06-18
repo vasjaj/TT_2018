@@ -18,7 +18,8 @@
     <h1 style="float: left; left: 50%; position: relative">Shop</h1>
     <% if user_signed_in? %>
       <div style="float: left">
-        <p><%= t('loggedInAs') %> <br> <%= current_user.email %></p>
+        <p><%= t('loggedInAs') %> <%= current_user.email %></p>
+        <p><%= current_user.role %></p>
       </div>
     <% end %>
     <div>
@@ -42,6 +43,7 @@
           <a class="dropdown-item" href="#"><%= link_to t('adminPanel'), {:controller => '/admin/users'}, {class: "btn btn-danger btn-lg btn-block col-sm-12 "} %></a>
         <% end %>
         <% if user_signed_in? %>
+          <a class="dropdown-item" href="#"><%= link_to "My profile", users_edit_path(current_user), { class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %></a>
           <a class="dropdown-item" href="#"><%= link_to t('editProfile'), edit_user_registration_path, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %></a>
           <a class="dropdown-item" href="#"><%= link_to t('logOut'), destroy_user_session_path, {method: :delete, class: "btn btn-danger btn-lg col-sm-12"} %></a>
         <% else %>

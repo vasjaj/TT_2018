@@ -9,7 +9,9 @@
     <th scope="col"><%= t('title') %></th>
     <th scope="col"><%= t('createdBy') %></th>
     <th scope="col"><%= t('boughtBy') %></th>
-    <th scope="col"><%= t('deliveredBy') %></th>
+    <th scope="col"><%= 'adressFrom' %></th>
+    <th scope="col"><%= 'adressTo' %></th>
+    <th scope="col"><%= 'courierFee' + ', EUR' %></th>
     <th scope="col"></th>
   </tr>
   </thead>
@@ -29,8 +31,20 @@
         <td> - </td>
       <% end %>
 
-      <% if item.delivered_by %>
-        <td><%= User.find(item.delivered_by).email %></td>
+      <% if item.adress_from %>
+        <td><%= item.adress_from %></td>
+      <% else %>
+        <td> - </td>
+      <% end %>
+
+      <% if item.adress_from %>
+        <td><%= item.adress_from %></td>
+      <% else %>
+        <td> - </td>
+      <% end %>
+
+      <% if item.courier_fee %>
+        <td><%= item.courier_fee %></td>
       <% else %>
         <td> - </td>
       <% end %>

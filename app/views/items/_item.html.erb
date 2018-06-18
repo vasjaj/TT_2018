@@ -9,7 +9,7 @@
     <% if current_user and item.delivered_by == current_user.id %>
       <%= link_to t('undeliverItem'), { :controller => :items , :action => :delivery_refuse }, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
     <% else %>
-      <% unless item.delivered_by %>
+      <% if not item.delivered_by and item.bought_by %>
         <%= link_to t('deliverItem'), { :controller => :items , :action => :delivery }, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
       <% end %>
     <% end %>
@@ -18,7 +18,7 @@
     <% if current_user and item.bought_by == current_user.id %>
       <%= link_to t('unbuyItem'), { :controller => :items , :action => :buy_refuse }, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
     <% else %>
-      <% unless item.delivered_by %>
+      <% if not item.delivered_by and not item.user_id == current_user.id%>
         <%= link_to t('buyItem'), { :controller => :items , :action => :buy }, {class: "btn btn-primary btn-lg col-sm-12 bg-secondary"} %>
       <% end %>
     <% end %>

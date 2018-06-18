@@ -1,15 +1,19 @@
 <h1><span class="badge badge-secondary col-sm-12 bg-dark text-left "><%= t('availableItems') %></span></h1>
-<%= form_tag(items_without_buy_path, :method => "get", id: "search-form") do %>
+
+<div style="margin-bottom: 10px">
+  <%= form_tag(items_without_buy_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: t('searchItems') %>
     <%= submit_tag t('search'), :name => nil %>
-<% end %>
+  <% end %>
+</div>
+
 <table class="table table-striped">
   <thead>
   <tr>
     <th scope="col"><%= t('title') %></th>
     <th scope="col"><%= t('createdBy') %></th>
-    <th scope="col"><%= 'price' %></th>
-    <th scope="col"><%= 'adress_from' + ', EUR' %></th>
+    <th scope="col"><%= t('price') %></th>
+    <th scope="col"><%= t('addressFrom') %></th>
     <th scope="col"></th>
   </tr>
   </thead>
@@ -26,13 +30,13 @@
       <% if item.price %>
         <td><%= item.price %></td>
       <% else %>
-        <td> - </td>
+        <td> -</td>
       <% end %>
 
       <% if item.adress_from %>
         <td><%= item.adress_from %></td>
       <% else %>
-        <td> - </td>
+        <td> -</td>
       <% end %>
 
       <td><%= link_to t('show'), item_path(item), {class: "btn btn-primary bg-secondary col-sm-6"} %></td>

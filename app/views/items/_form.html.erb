@@ -29,7 +29,7 @@
 
   <p>
     <%= form.label t(:description.downcase) %><br>
-    <%= form.text_area :description, {class: "form-control col-sm-6", rows: 10, placeholder: t('description')} %>
+    <%= form.text_area :description, {class: "form-control col-sm-6", rows: 10, placeholder: t('descriptionText')} %>
   </p>
 
   <p>
@@ -38,13 +38,13 @@
   </p>
 
   <p>
-    <%= form.label ('price' + ', EUR')%>
+    <%= form.label t('price') %>
     <%= form.number_field :price,  {min: "0.00", step:"0.01"} %>
   </p>
 
   <p>
-    <%= form.label :adress_from %>
-    <%= form.text_field :adress_from %>
+    <%= form.label t('addressFrom') %>
+    <%= form.text_field :address_from %>
   </p>
 
   <p>

@@ -31,9 +31,9 @@
 
 en:
   chooseRole: "Choose role"
-  user2: "User"
-  courier: "Courier"
   user: "User"
+  courier: "Courier"
+  profile: "Profile"
   author: "Author"
   allItems: "All items"
   itemsWithoutDelivery: "Items without delivery"
@@ -86,10 +86,19 @@ en:
   confirmMyPassword: "Confirm my password"
   sendMeResetPassInstr: "Send me reset password instructions"
   newItemTitle: "What is Your product?"
-  description: "Tell about Your product"
+  descriptionText: "Tell about Your product"
+  description: "Description"
   publish: "Publish"
   error: "prohibited this item from being saved:"
   image: "Image"
+  price: "Price, EUR"
+  addressFrom: "Address from"
+  addressTo: "Address to"
+  courierFee: "Courier fee"
+  myProfile: "My profile"
+  name: "Name"
+  lastname: "Lastname"
+  role: "Role"
   faq1: "1) What is this site for?
   - Helps the buyer, the seller and the courier, who will deliver the parcel, to cooperate."
   faq2: "2) How to post an item?

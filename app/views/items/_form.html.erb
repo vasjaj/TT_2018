@@ -14,7 +14,7 @@
   <% end %>
 
   <p>
-    <strong>Author: </strong>
+    <strong><%= t('author') %>: </strong>
     <% if current_user %>
       <%= current_user.email %>
     <% else %>

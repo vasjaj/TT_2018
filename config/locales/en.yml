@@ -34,6 +34,7 @@ en:
   user2: "User"
   courier: "Courier"
   user: "User"
+  author: "Author"
   allItems: "All items"
   itemsWithoutDelivery: "Items without delivery"
   availableItems: "Available items"

@@ -3,6 +3,7 @@ lv:
   user2: "Lietotājs"
   courier: "Kurjers"
   user: "Profils"
+  author: "Autors"
   allItems: "Visi produkti"
   itemsWithoutDelivery: "Produkti bez piegādātāja"
   availableItems: "Pieejamie produkti"

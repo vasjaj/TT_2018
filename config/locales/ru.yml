@@ -3,6 +3,7 @@ ru:
   user2: "Пользователь"
   courier: "Курьер"
   user: "Профиль"
+  author: "Автор"
   allItems: "Все продукты"
   itemsWithoutDelivery: "Продукты без доставщика"
   availableItems: "Доступные продукты"

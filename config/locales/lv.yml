@@ -8,6 +8,7 @@ lv:
   itemsWithoutDelivery: "Produkti bez piegādātāja"
   availableItems: "Pieejamie produkti"
   createNewItem: "Izveidot jaunu produktu"
+  admin: "Admins"
   adminPanel: "Admina rūts"
   loggedInAs: "Ielogots kā:"
   editProfile: "Rediģēt profilu"

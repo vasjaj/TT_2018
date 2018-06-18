@@ -8,6 +8,7 @@ ru:
   itemsWithoutDelivery: "Продукты без доставщика"
   availableItems: "Доступные продукты"
   createNewItem: "Создать новый продукт"
+  admin: "Админ"
   adminPanel: "Панель админа"
   loggedInAs: "Залогинин как:"
   editProfile: "Редактировать профиль"

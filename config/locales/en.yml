@@ -39,6 +39,7 @@ en:
   itemsWithoutDelivery: "Items without delivery"
   availableItems: "Available items"
   createNewItem: "Create new item"
+  admin: "Admin"
   adminPanel: "Admin panel"
   loggedInAs: "Logged in as:"
   editProfile: "Edit profile"

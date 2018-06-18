@@ -28378,6 +28378,7 @@ Processing by UsersController#profile as HTML
 Completed 200 OK in 107ms (Views: 101.0ms | ActiveRecord: 0.7ms)
 
 
+<<<<<<< Updated upstream
 Started GET "/" for 127.0.0.1 at 2018-06-18 13:37:41 +0300
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   
@@ -28689,5 +28690,689 @@ Processing by UsersController#profile as HTML
   Rendered users/profile.html.erb within layouts/application (12.6ms)
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
 Completed 200 OK in 2223ms (Views: 111.7ms | ActiveRecord: 0.3ms)
+=======
+Started GET "/users/1/profile" for 127.0.0.1 at 2018-06-18 13:35:27 +0300
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/profile.html.erb within layouts/application
+  Rendered users/_form.html.erb (44.0ms)
+  Rendered users/profile.html.erb within layouts/application (44.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 81.4ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-06-18 13:35:32 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3tnbBPv15g174tbOmp9+W0agK8dJaKkoWlQajxgOehLxy58hdiL3LGw6kVnQhKoYTAIxGpz5xqg3Q0XUq8M5IQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:35:32 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 76ms (Views: 68.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-06-18 13:36:03 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 50ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-18 13:36:28 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k6mlR/fGTdDwsPDP8nBaQAC+grYV1rfBv155bY+3KdtVZg3ef6X8w1pqTN8vjNCaw0BoMLx7bIg1oYnSIG+7eQ==", "user"=>{"email"=>"Antonins.Vorona@TT2018.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Reģistrēties"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "antonins.vorona@tt2018.com"], ["LIMIT", 1]]
+  [1m[36mLog Create (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("changed_at", "field", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["changed_at", "2018-06-18 10:36:28.336532"], ["field", "{\"email\"=>[\"\", \"antonins.vorona@tt2018.com\"], \"encrypted_password\"=>[\"\", \"$2a$11$MGvPBkLoCyzEKhgSxUTMUu8eBMS6NK26qCagVF6JELAirPa8HXcZu\"]}"], ["created_at", "2018-06-18 10:36:28.336891"], ["updated_at", "2018-06-18 10:36:28.336891"]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "antonins.vorona@tt2018.com"], ["encrypted_password", "$2a$11$MGvPBkLoCyzEKhgSxUTMUu8eBMS6NK26qCagVF6JELAirPa8HXcZu"], ["created_at", "2018-06-18 10:36:28.338525"], ["updated_at", "2018-06-18 10:36:28.338525"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLog Create (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("changed_at", "field", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["changed_at", "2018-06-18 10:36:28.348521"], ["field", "{\"sign_in_count\"=>[0, 1], \"current_sign_in_at\"=>[nil, Mon, 18 Jun 2018 10:36:28 UTC +00:00], \"last_sign_in_at\"=>[nil, Mon, 18 Jun 2018 10:36:28 UTC +00:00], \"current_sign_in_ip\"=>[nil, \"127.0.0.1\"], \"last_sign_in_ip\"=>[nil, \"127.0.0.1\"]}"], ["created_at", "2018-06-18 10:36:28.348826"], ["updated_at", "2018-06-18 10:36:28.348826"]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-06-18 10:36:28.346055"], ["last_sign_in_at", "2018-06-18 10:36:28.346055"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-06-18 10:36:28.349853"], ["id", 2]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 179ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:36:28 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/?locale=ru" for 127.0.0.1 at 2018-06-18 13:36:42 +0300
+Processing by ItemsController#index as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (26.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 86.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2018-06-18 13:36:44 +0300
+Processing by ItemsController#new as HTML
+  Rendering items/new.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/_form.html.erb (25.9ms)
+  Rendered items/new.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 99ms (Views: 92.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-06-18 13:38:44 +0300
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"re6hvT9nvzLFfsdJRjJjIAPtW1SqUXgIuh8wXpXGSacl+7W2gffkoq5A48ls9lRHqvyUlIpZOXSzsjyJSJEkXA==", "item"=>{"title"=>"Mage Knight: The BoardGame", "description"=>"Condition: Good, some scratches on the box.\r\nLanguage: English", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff44013c428 @tempfile=#<Tempfile:/tmp/RackMultipart20180618-30582-1675503.jpeg>, @original_filename="download.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[image]\"; filename=\"download.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "price"=>"75.50", "adress_from"=>"Maskavas iela 34 - 12"}, "commit"=>"Опубликовать"}
+[paperclip] Trying to link /tmp/RackMultipart20180618-30582-1675503.jpeg to /tmp/fd456406745d816a45cae554c788e75420180618-30582-7azomz.jpeg
+[paperclip] Trying to link /tmp/fd456406745d816a45cae554c788e75420180618-30582-7azomz.jpeg to /tmp/fd456406745d816a45cae554c788e75420180618-30582-a47ymo.jpeg
+Command :: file -b --mime '/tmp/fd456406745d816a45cae554c788e75420180618-30582-a47ymo.jpeg'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[paperclip] Trying to link /tmp/fd456406745d816a45cae554c788e75420180618-30582-7azomz.jpeg to /tmp/fd456406745d816a45cae554c788e75420180618-30582-1ui6wh1.jpeg
+Command :: file -b --mime '/tmp/fd456406745d816a45cae554c788e75420180618-30582-1ui6wh1.jpeg'
+  [1m[36mItem Create (1.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "created_at", "updated_at", "user_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "adress_from", "price") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Mage Knight: The BoardGame"], ["description", "Condition: Good, some scratches on the box.\r\nLanguage: English"], ["created_at", "2018-06-18 10:38:44.677525"], ["updated_at", "2018-06-18 10:38:44.677525"], ["user_id", 2], ["image_file_name", "download.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 12269], ["image_updated_at", "2018-06-18 10:38:44.647805"], ["adress_from", "Maskavas iela 34 - 12"], ["price", 75.5]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/items/5
+Completed 302 Found in 65ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/items/5" for 127.0.0.1 at 2018-06-18 13:38:44 +0300
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/_item.html.erb (4.6ms)
+  Rendered items/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 51ms (Views: 45.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/items/5" for 127.0.0.1 at 2018-06-18 13:39:15 +0300
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/_item.html.erb (8.1ms)
+  Rendered items/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 53ms (Views: 48.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:39:18 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (21.0ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 70.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/items/without_buy" for 127.0.0.1 at 2018-06-18 13:39:20 +0300
+Processing by ItemsController#without_buy as HTML
+  Rendering items/without_buy.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."bought_by" IS NULL ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/without_buy.html.erb within layouts/application (13.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 62ms (Views: 56.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/items/5" for 127.0.0.1 at 2018-06-18 13:39:22 +0300
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/_item.html.erb (10.4ms)
+  Rendered items/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 79ms (Views: 75.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:39:44 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (18.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 91ms (Views: 81.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2018-06-18 13:39:54 +0300
+Processing by ItemsController#new as HTML
+  Rendering items/new.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/_form.html.erb (26.2ms)
+  Rendered items/new.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 106ms (Views: 99.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-06-18 13:42:08 +0300
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dms2YdzYgRdHFyr5BV/BeBRiF5t4sdTvomFf6djTSEWGfiJqYkjahywpDnkvm/YfvXPYW1i5lZOrzFM+BYQlvg==", "item"=>{"title"=>"Catan", "description"=>"Condition: A figure is lost, some tiles ripped off, but still playable.", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff44040cbf8 @tempfile=#<Tempfile:/tmp/RackMultipart20180618-30582-nv39ze.jpg>, @original_filename="dye_catan_150407_0564.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[image]\"; filename=\"dye_catan_150407_0564.jpg\"\r\nContent-Type: image/jpeg\r\n">, "price"=>"20.75", "adress_from"=>"Maskavas iela 34 - 12"}, "commit"=>"Опубликовать"}
+[paperclip] Trying to link /tmp/RackMultipart20180618-30582-nv39ze.jpg to /tmp/9a0636784bad12adbc674fed8bbb5df720180618-30582-mom9pq.jpg
+[paperclip] Trying to link /tmp/9a0636784bad12adbc674fed8bbb5df720180618-30582-mom9pq.jpg to /tmp/9a0636784bad12adbc674fed8bbb5df720180618-30582-1246tfq.jpg
+Command :: file -b --mime '/tmp/9a0636784bad12adbc674fed8bbb5df720180618-30582-1246tfq.jpg'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[paperclip] Trying to link /tmp/9a0636784bad12adbc674fed8bbb5df720180618-30582-mom9pq.jpg to /tmp/9a0636784bad12adbc674fed8bbb5df720180618-30582-ttv9qb.jpg
+Command :: file -b --mime '/tmp/9a0636784bad12adbc674fed8bbb5df720180618-30582-ttv9qb.jpg'
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "created_at", "updated_at", "user_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "adress_from", "price") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Catan"], ["description", "Condition: A figure is lost, some tiles ripped off, but still playable."], ["created_at", "2018-06-18 10:42:08.661163"], ["updated_at", "2018-06-18 10:42:08.661163"], ["user_id", 2], ["image_file_name", "dye_catan_150407_0564.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 106352], ["image_updated_at", "2018-06-18 10:42:08.648941"], ["adress_from", "Maskavas iela 34 - 12"], ["price", 20.75]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/items/6
+Completed 302 Found in 28ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/items/6" for 127.0.0.1 at 2018-06-18 13:42:08 +0300
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/_item.html.erb (6.1ms)
+  Rendered items/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:42:18 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (18.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 67ms (Views: 63.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:42:24 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (18.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 76ms (Views: 71.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/items/without_delivery" for 127.0.0.1 at 2018-06-18 13:42:26 +0300
+Processing by ItemsController#without_delivery as HTML
+  Rendering items/without_delivery.html.erb within layouts/application
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."delivered_by" IS NULL ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/without_delivery.html.erb within layouts/application (30.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 85.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/items/without_buy" for 127.0.0.1 at 2018-06-18 13:42:28 +0300
+Processing by ItemsController#without_buy as HTML
+  Rendering items/without_buy.html.erb within layouts/application
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."bought_by" IS NULL ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/without_buy.html.erb within layouts/application (16.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 89ms (Views: 84.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:42:56 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (32.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 82.8ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-06-18 13:43:50 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ht/1TUfaprj2Jrqhn6Kmi5egbfPCKykjPuO/hUKJPgDJta1dPJ0zVX/fMdP6tXEKY5dZHwZKjfgtY7VZF1dv0w=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:43:50 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 59ms (Views: 55.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-06-18 13:43:53 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 79ms (Views: 76.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-18 13:44:20 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"19SQ5X0j0muKBwYYN/Ux9rehSBuoRcTV2Y9MCUlyX1tuGG8iHlqCUS64AkvqW79HnJg0uDL+RulqdFslWTA+2g==", "user"=>{"email"=>"lovelyCourier@courier.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Reģistrēties"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "lovelycourier@courier.com"], ["LIMIT", 1]]
+  [1m[36mLog Create (0.9ms)[0m  [1m[32mINSERT INTO "logs" ("changed_at", "field", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["changed_at", "2018-06-18 10:44:20.598577"], ["field", "{\"email\"=>[\"\", \"lovelycourier@courier.com\"], \"encrypted_password\"=>[\"\", \"$2a$11$NQczZGwAjiuLXsbRSY/mCOmOj0TQE4IzTkRW//D/xAWrSAJzZizCK\"]}"], ["created_at", "2018-06-18 10:44:20.598938"], ["updated_at", "2018-06-18 10:44:20.598938"]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "lovelycourier@courier.com"], ["encrypted_password", "$2a$11$NQczZGwAjiuLXsbRSY/mCOmOj0TQE4IzTkRW//D/xAWrSAJzZizCK"], ["created_at", "2018-06-18 10:44:20.601326"], ["updated_at", "2018-06-18 10:44:20.601326"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLog Create (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("changed_at", "field", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["changed_at", "2018-06-18 10:44:20.613356"], ["field", "{\"sign_in_count\"=>[0, 1], \"current_sign_in_at\"=>[nil, Mon, 18 Jun 2018 10:44:20 UTC +00:00], \"last_sign_in_at\"=>[nil, Mon, 18 Jun 2018 10:44:20 UTC +00:00], \"current_sign_in_ip\"=>[nil, \"127.0.0.1\"], \"last_sign_in_ip\"=>[nil, \"127.0.0.1\"]}"], ["created_at", "2018-06-18 10:44:20.613653"], ["updated_at", "2018-06-18 10:44:20.613653"]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-06-18 10:44:20.610173"], ["last_sign_in_at", "2018-06-18 10:44:20.610173"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-06-18 10:44:20.615062"], ["id", 3]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 194ms (ActiveRecord: 12.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:44:20 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (6.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?locale=ru" for 127.0.0.1 at 2018-06-18 13:44:27 +0300
+Processing by ItemsController#index as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (19.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 74ms (Views: 69.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/3/profile" for 127.0.0.1 at 2018-06-18 13:44:29 +0300
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/profile.html.erb within layouts/application
+  Rendered users/_form.html.erb (27.1ms)
+  Rendered users/profile.html.erb within layouts/application (30.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 87.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3/profile?utf8=%E2%9C%93&user%5Bname%5D=courier&user%5Blastname%5D=lovely&user%5Brole%5D=courier&user%5Brole%5D=courier&commit=%D0%9E%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D1%82%D1%8C" for 127.0.0.1 at 2018-06-18 13:45:03 +0300
+Processing by UsersController#profile as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"courier", "lastname"=>"lovely", "role"=>"courier"}, "commit"=>"Опубликовать", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/profile.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.0ms)
+  Rendered users/profile.html.erb within layouts/application (12.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 89ms (Views: 84.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/3/profile?utf8=%E2%9C%93&user%5Bname%5D=courier&user%5Blastname%5D=lovely&user%5Brole%5D=courier&user%5Brole%5D=courier&commit=%D0%9E%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D1%82%D1%8C" for 127.0.0.1 at 2018-06-18 13:45:08 +0300
+Processing by UsersController#profile as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"courier", "lastname"=>"lovely", "role"=>"courier"}, "commit"=>"Опубликовать", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/profile.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.8ms)
+  Rendered users/profile.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 47.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3/profile?utf8=%E2%9C%93&user%5Bname%5D=courier&user%5Blastname%5D=lovely&user%5Brole%5D=courier&user%5Brole%5D=courier&commit=%D0%9E%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D1%82%D1%8C" for 127.0.0.1 at 2018-06-18 13:45:10 +0300
+Processing by UsersController#profile as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"courier", "lastname"=>"lovely", "role"=>"courier"}, "commit"=>"Опубликовать", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/profile.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/profile.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 39.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3/profile?utf8=%E2%9C%93&user%5Bname%5D=courier&user%5Blastname%5D=lovely&user%5Brole%5D=courier&user%5Brole%5D=courier&commit=%D0%9E%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D1%82%D1%8C" for 127.0.0.1 at 2018-06-18 13:45:10 +0300
+Processing by UsersController#profile as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"courier", "lastname"=>"lovely", "role"=>"courier"}, "commit"=>"Опубликовать", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/profile.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.2ms)
+  Rendered users/profile.html.erb within layouts/application (6.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 44ms (Views: 41.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:45:15 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (30.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 89.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/items/without_buy" for 127.0.0.1 at 2018-06-18 13:45:20 +0300
+Processing by ItemsController#without_buy as HTML
+  Rendering items/without_buy.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."bought_by" IS NULL ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/without_buy.html.erb within layouts/application (13.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 55.8ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-06-18 13:45:28 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"y490oGiWZ/B6KazzpFRq3m2KJaSlMC9IxDOjCX8DKhepXlTXlquPOZ03uf4aw5yiv0NnD7ORlBefn4XBkR06+Q=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 11ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:45:28 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 56ms (Views: 53.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-18 13:45:31 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (55.9ms)
+Completed 200 OK in 113ms (Views: 108.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-18 13:45:55 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w7/0/lCVIe54l0qiGS0ds+i9lxVbKgFiZZ+igfp1anUOREiDVK/zcaOzIguTBsiQfMK7UoHkvUSvWQYcclGr3Q==", "user"=>{"email"=>"myItems@items.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Ieiet"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "myitems@items.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w7/0/lCVIe54l0qiGS0ds+i9lxVbKgFiZZ+igfp1anUOREiDVK/zcaOzIguTBsiQfMK7UoHkvUSvWQYcclGr3Q==", "user"=>{"email"=>"myItems@items.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Ieiet"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 162ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-18 13:46:04 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2afvT6kXT4jrqID30rPzWeIpWV240E+0iqO5PKGmfoHmpUFVsPJrjqo6VYb4Z2hwwB0fxbmPsOhuBnMb/O0ExA==", "user"=>{"email"=>"myItems@items.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Ieiet"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "myitems@items.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2afvT6kXT4jrqID30rPzWeIpWV240E+0iqO5PKGmfoHmpUFVsPJrjqo6VYb4Z2hwwB0fxbmPsOhuBnMb/O0ExA==", "user"=>{"email"=>"myItems@items.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Ieiet"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 167ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-18 13:46:07 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 48ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-06-18 13:46:11 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 86ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-18 13:46:26 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6ShOjOIgk+0S/FW5/LD9V8LSBXEX103smKo71rc46ZJ973vu1CexjqllnW7Zr9w5qW8Jb3tmfB/ocbV4l1UsAg==", "user"=>{"email"=>"myItems@items.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Reģistrēties"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "myitems@items.com"], ["LIMIT", 1]]
+  [1m[36mLog Create (0.6ms)[0m  [1m[32mINSERT INTO "logs" ("changed_at", "field", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["changed_at", "2018-06-18 10:46:26.798230"], ["field", "{\"email\"=>[\"\", \"myitems@items.com\"], \"encrypted_password\"=>[\"\", \"$2a$11$ZQHFPTyo5w9e/YoyjfG0Ju1S2UQRj3ktUTiw3FoqQbrkplBFmRvTu\"]}"], ["created_at", "2018-06-18 10:46:26.798495"], ["updated_at", "2018-06-18 10:46:26.798495"]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "myitems@items.com"], ["encrypted_password", "$2a$11$ZQHFPTyo5w9e/YoyjfG0Ju1S2UQRj3ktUTiw3FoqQbrkplBFmRvTu"], ["created_at", "2018-06-18 10:46:26.800015"], ["updated_at", "2018-06-18 10:46:26.800015"]]
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLog Create (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("changed_at", "field", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["changed_at", "2018-06-18 10:46:26.813278"], ["field", "{\"sign_in_count\"=>[0, 1], \"current_sign_in_at\"=>[nil, Mon, 18 Jun 2018 10:46:26 UTC +00:00], \"last_sign_in_at\"=>[nil, Mon, 18 Jun 2018 10:46:26 UTC +00:00], \"current_sign_in_ip\"=>[nil, \"127.0.0.1\"], \"last_sign_in_ip\"=>[nil, \"127.0.0.1\"]}"], ["created_at", "2018-06-18 10:46:26.813531"], ["updated_at", "2018-06-18 10:46:26.813531"]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-06-18 10:46:26.812668"], ["last_sign_in_at", "2018-06-18 10:46:26.812668"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-06-18 10:46:26.814929"], ["id", 4]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 183ms (ActiveRecord: 19.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:46:26 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/?locale=ru" for 127.0.0.1 at 2018-06-18 13:46:34 +0300
+Processing by ItemsController#index as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (21.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 77.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users/my_items" for 127.0.0.1 at 2018-06-18 13:46:40 +0300
+Processing by UsersController#my_items as HTML
+  Parameters: {"authenticity_token"=>"g6C8F3L0TQiACEg2txUyXZRT+wDwmqfhToki67P5v8O8ohINaxFpDsGanUedwal0tme9mPHFWL2qLOjM7rLFhg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/my_items.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered users/my_items.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 75ms (Views: 45.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2018-06-18 13:46:43 +0300
+Processing by ItemsController#new as HTML
+  Rendering items/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered items/_form.html.erb (12.1ms)
+  Rendered items/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 67ms (Views: 64.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-06-18 13:48:54 +0300
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ma3CX/1Obkz+7B05e3C3JwMIJ9arHFGVZxldeHjGcczoGTzTNES2DjWeOBndbng1cVfbNdz86LMHdKyf4fz1+g==", "item"=>{"title"=>"Bananiņi", "description"=>"Daudz garšīgu bananu! Nedargi!", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff4489509b8 @tempfile=#<Tempfile:/tmp/RackMultipart20180618-30582-1qqbxid.jpg>, @original_filename="AN394-Bananas-732x549-thumb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[image]\"; filename=\"AN394-Bananas-732x549-thumb.jpg\"\r\nContent-Type: image/jpeg\r\n">, "price"=>"0.47", "adress_from"=>"Gunara astras 8"}, "commit"=>"Опубликовать"}
+[paperclip] Trying to link /tmp/RackMultipart20180618-30582-1qqbxid.jpg to /tmp/97cc7d1a51b590e600aa4e4d2400e3db20180618-30582-1lz3yvl.jpg
+[paperclip] Trying to link /tmp/97cc7d1a51b590e600aa4e4d2400e3db20180618-30582-1lz3yvl.jpg to /tmp/97cc7d1a51b590e600aa4e4d2400e3db20180618-30582-1inftw7.jpg
+Command :: file -b --mime '/tmp/97cc7d1a51b590e600aa4e4d2400e3db20180618-30582-1inftw7.jpg'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+[paperclip] Trying to link /tmp/97cc7d1a51b590e600aa4e4d2400e3db20180618-30582-1lz3yvl.jpg to /tmp/97cc7d1a51b590e600aa4e4d2400e3db20180618-30582-gfo46p.jpg
+Command :: file -b --mime '/tmp/97cc7d1a51b590e600aa4e4d2400e3db20180618-30582-gfo46p.jpg'
+  [1m[36mItem Create (3.5ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "created_at", "updated_at", "user_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "adress_from", "price") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Bananiņi"], ["description", "Daudz garšīgu bananu! Nedargi!"], ["created_at", "2018-06-18 10:48:54.277310"], ["updated_at", "2018-06-18 10:48:54.277310"], ["user_id", 4], ["image_file_name", "AN394-Bananas-732x549-thumb.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 34266], ["image_updated_at", "2018-06-18 10:48:54.243506"], ["adress_from", "Gunara astras 8"], ["price", 0.47]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/items/7
+Completed 302 Found in 71ms (ActiveRecord: 13.2ms)
+
+
+Started GET "/items/7" for 127.0.0.1 at 2018-06-18 13:48:54 +0300
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered items/_item.html.erb (3.5ms)
+  Rendered items/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 50ms (Views: 46.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:48:59 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (44.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 109ms (Views: 97.9ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2018-06-18 13:49:31 +0300
+Processing by ItemsController#new as HTML
+  Rendering items/new.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered items/_form.html.erb (23.3ms)
+  Rendered items/new.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 95ms (Views: 86.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-06-18 13:51:49 +0300
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KIKHxq+5Q/+C38+qEpRIi7boDZBLYWeq9xf9iZ2AInhZNnlKZrObvUmt6oq0ioeZxLfxczyB3oyXegxuBLqmTg==", "item"=>{"title"=>"Apelsīni", "description"=>"Daudz dažādu apelsīnu!", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff4389194c8 @tempfile=#<Tempfile:/tmp/RackMultipart20180618-30582-1itms0v.jpeg>, @original_filename="59321.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[image]\"; filename=\"59321.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "price"=>"0.30", "adress_from"=>"Gunara astras 8"}, "commit"=>"Опубликовать"}
+[paperclip] Trying to link /tmp/RackMultipart20180618-30582-1itms0v.jpeg to /tmp/cb0ad9132928a42f70797a828062dc5b20180618-30582-1fo50ag.jpeg
+[paperclip] Trying to link /tmp/cb0ad9132928a42f70797a828062dc5b20180618-30582-1fo50ag.jpeg to /tmp/cb0ad9132928a42f70797a828062dc5b20180618-30582-1kvytoc.jpeg
+Command :: file -b --mime '/tmp/cb0ad9132928a42f70797a828062dc5b20180618-30582-1kvytoc.jpeg'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[paperclip] Trying to link /tmp/cb0ad9132928a42f70797a828062dc5b20180618-30582-1fo50ag.jpeg to /tmp/cb0ad9132928a42f70797a828062dc5b20180618-30582-1ceh6uf.jpeg
+Command :: file -b --mime '/tmp/cb0ad9132928a42f70797a828062dc5b20180618-30582-1ceh6uf.jpeg'
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "created_at", "updated_at", "user_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "adress_from", "price") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Apelsīni"], ["description", "Daudz dažādu apelsīnu!"], ["created_at", "2018-06-18 10:51:49.955511"], ["updated_at", "2018-06-18 10:51:49.955511"], ["user_id", 4], ["image_file_name", "59321.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 37063], ["image_updated_at", "2018-06-18 10:51:49.928252"], ["adress_from", "Gunara astras 8"], ["price", 0.3]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/items/8
+Completed 302 Found in 54ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/items/8" for 127.0.0.1 at 2018-06-18 13:51:49 +0300
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered items/_item.html.erb (5.6ms)
+  Rendered items/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 59ms (Views: 54.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 13:51:52 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (15.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 67ms (Views: 63.6ms | ActiveRecord: 1.8ms)
+>>>>>>> Stashed changes
 
 

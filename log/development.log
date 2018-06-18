@@ -21752,6 +21752,7 @@ Completed 200 OK in 81ms (Views: 78.2ms | ActiveRecord: 0.6ms)
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
@@ -21876,6 +21877,8 @@ Started GET "/articles/new" for 127.0.0.1 at 2018-06-17 22:32:44 +0300
   
 ActionController::RoutingError (No route matches [GET] "/articles/new"):
 =======
+=======
+>>>>>>> dc52b7e... fixed routes
 Started GET "/" for 127.0.0.1 at 2018-06-17 22:25:21 +0300
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by ItemsController#index as HTML
@@ -21911,6 +21914,7 @@ Processing by FaqController#faq as HTML
   Rendering faq/faq.html.erb within layouts/application
   Rendered faq/faq.html.erb within layouts/application (3.3ms)
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+<<<<<<< HEAD
 Completed 200 OK in 98ms (Views: 94.1ms | ActiveRecord: 0.2ms)
 
 
@@ -25236,6 +25240,34 @@ Completed 200 OK in 121ms (Views: 110.0ms | ActiveRecord: 0.6ms)
 
 
 Started GET "/images/original/missing.png" for 127.0.0.1 at 2018-06-18 05:21:10 +0300
+=======
+Completed 200 OK in 98ms (Views: 94.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-17 22:25:34 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (19.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 85.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2018-06-17 22:25:36 +0300
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered items/_item.html.erb (22.1ms)
+  Rendered items/show.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 101ms (Views: 92.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2018-06-17 22:25:36 +0300
+>>>>>>> dc52b7e... fixed routes
   
 ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
   
@@ -25266,6 +25298,7 @@ puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
 puma (3.11.4) lib/puma/server.rb:446:in `process_client'
 puma (3.11.4) lib/puma/server.rb:306:in `block in run'
 puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+<<<<<<< HEAD
 Started DELETE "/items/1" for 127.0.0.1 at 2018-06-18 05:21:15 +0300
 Processing by ItemsController#destroy as HTML
   Parameters: {"authenticity_token"=>"Qm2xZsLoFm6AorfGP14J8D263L8w4EN0sIimBF5K71VxMfkxYKmARgpu723WklgJm3kFCU+MDlYBzNRasAilWQ==", "id"=>"1"}
@@ -25355,6 +25388,132 @@ ActionController::RoutingError (No route matches [GET] "/images/original/missing
   
 actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 =======
+=======
+Started GET "/admin" for 127.0.0.1 at 2018-06-17 22:25:43 +0300
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/index.html.erb within layouts/administrate/application
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_search.html.erb (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" IN (?, ?, ?)[0m  [["user_id", 1], ["user_id", 2], ["user_id", 3]]
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/has_many/_index.html.erb (0.4ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/number/_index.html.erb (0.4ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.3ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/has_many/_index.html.erb (0.1ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/number/_index.html.erb (0.1ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/has_many/_index.html.erb (0.1ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/number/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_collection.html.erb (25.5ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/index.html.erb within layouts/administrate/application (37.3ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_stylesheet.html.erb (6.4ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_icons.erb (0.3ms)
+  Rendered /home/vasjaj/.rvm/gems/ruby-2.3.4/gems/administrate-0.10.0/app/views/administrate/application/_navigation.html.erb (5.1ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Faq):
+    10: <nav class="navigation" role="navigation">
+    11:   <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
+    12:     <%= link_to(
+    13:       display_resource_name(resource),
+    14:       [namespace, resource_index_route_key(resource)],
+    15:       class: "navigation__link navigation__link--#{nav_link_state(resource)}"
+    16:     ) %>
+  
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/active_support.rb:53:in `block in load_missing_constant'
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/active_support.rb:53:in `rescue in load_missing_constant'
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/active_support.rb:43:in `load_missing_constant'
+activesupport (5.2.0) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.0) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.0) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.0) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.0) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.0) lib/active_support/core_ext/string/inflections.rb:68:in `constantize'
+administrate (0.10.0) app/helpers/administrate/application_helper.rb:11:in `class_from_resource'
+administrate (0.10.0) app/helpers/administrate/application_helper.rb:15:in `display_resource_name'
+administrate (0.10.0) app/views/administrate/application/_navigation.html.erb:13:in `block in __home_vasjaj__rvm_gems_ruby_______gems_administrate________app_views_administrate_application__navigation_html_erb__2898621887114996829_69812147522760'
+administrate (0.10.0) app/views/administrate/application/_navigation.html.erb:11:in `each'
+administrate (0.10.0) app/views/administrate/application/_navigation.html.erb:11:in `__home_vasjaj__rvm_gems_ruby_______gems_administrate________app_views_administrate_application__navigation_html_erb__2898621887114996829_69812147522760'
+actionview (5.2.0) lib/action_view/template.rb:159:in `block in render'
+activesupport (5.2.0) lib/active_support/notifications.rb:170:in `instrument'
+actionview (5.2.0) lib/action_view/template.rb:354:in `instrument_render_template'
+actionview (5.2.0) lib/action_view/template.rb:157:in `render'
+actionview (5.2.0) lib/action_view/renderer/partial_renderer.rb:344:in `block in render_partial'
+actionview (5.2.0) lib/action_view/renderer/abstract_renderer.rb:44:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionview (5.2.0) lib/action_view/renderer/abstract_renderer.rb:43:in `instrument'
+actionview (5.2.0) lib/action_view/renderer/partial_renderer.rb:333:in `render_partial'
+actionview (5.2.0) lib/action_view/renderer/partial_renderer.rb:312:in `render'
+actionview (5.2.0) lib/action_view/renderer/renderer.rb:49:in `render_partial'
+actionview (5.2.0) lib/action_view/helpers/rendering_helper.rb:37:in `render'
+administrate (0.10.0) app/views/layouts/administrate/application.html.erb:31:in `__home_vasjaj__rvm_gems_ruby_______gems_administrate________app_views_layouts_administrate_application_html_erb__390349794872233019_69812145518420'
+actionview (5.2.0) lib/action_view/template.rb:159:in `block in render'
+activesupport (5.2.0) lib/active_support/notifications.rb:170:in `instrument'
+actionview (5.2.0) lib/action_view/template.rb:354:in `instrument_render_template'
+actionview (5.2.0) lib/action_view/template.rb:157:in `render'
+actionview (5.2.0) lib/action_view/renderer/template_renderer.rb:66:in `render_with_layout'
+actionview (5.2.0) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+actionview (5.2.0) lib/action_view/renderer/template_renderer.rb:16:in `render'
+actionview (5.2.0) lib/action_view/renderer/renderer.rb:44:in `render_template'
+actionview (5.2.0) lib/action_view/renderer/renderer.rb:25:in `render'
+actionview (5.2.0) lib/action_view/rendering.rb:103:in `_render_template'
+actionpack (5.2.0) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+actionview (5.2.0) lib/action_view/rendering.rb:84:in `render_to_body'
+actionpack (5.2.0) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (5.2.0) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (5.2.0) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (5.2.0) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:46:in `block (2 levels) in render'
+activesupport (5.2.0) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/home/vasjaj/.rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+activesupport (5.2.0) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:46:in `block in render'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:31:in `cleanup_view_runtime'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:45:in `render'
+administrate (0.10.0) app/controllers/administrate/application_controller.rb:15:in `index'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.0) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+>>>>>>> dc52b7e... fixed routes
 rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
 rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
 actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
@@ -25364,7 +25523,10 @@ activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
 actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
 actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
 actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+<<<<<<< HEAD
 >>>>>>> dc52b7ed2e88afc3a59aecbded0df2ea882d04af
+=======
+>>>>>>> dc52b7e... fixed routes
 web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
 web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
@@ -25392,6 +25554,7 @@ puma (3.11.4) lib/puma/server.rb:446:in `process_client'
 puma (3.11.4) lib/puma/server.rb:306:in `block in run'
 puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 <<<<<<< HEAD
+<<<<<<< HEAD
 Started GET "/users/1/edit" for 127.0.0.1 at 2018-06-18 05:27:19 +0300
 Processing by UsersController#edit as HTML
   Parameters: {"id"=>"1"}
@@ -25414,6 +25577,9 @@ Started GET "/images/original/missing.png" for 127.0.0.1 at 2018-06-18 05:27:20 
 =======
 Started GET "/images/original/missing.png" for 127.0.0.1 at 2018-06-17 22:25:52 +0300
 >>>>>>> dc52b7ed2e88afc3a59aecbded0df2ea882d04af
+=======
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2018-06-17 22:25:52 +0300
+>>>>>>> dc52b7e... fixed routes
   
 ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
   
@@ -25444,6 +25610,7 @@ puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
 puma (3.11.4) lib/puma/server.rb:446:in `process_client'
 puma (3.11.4) lib/puma/server.rb:306:in `block in run'
 puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+<<<<<<< HEAD
 <<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2018-06-18 05:41:26 +0300
 Processing by ItemsController#index as HTML
@@ -25473,6 +25640,8 @@ ActionController::RoutingError (No route matches [GET] "/images/original/missing
   
 actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 =======
+=======
+>>>>>>> dc52b7e... fixed routes
 Started GET "/admin/users" for 127.0.0.1 at 2018-06-17 22:25:55 +0300
 Processing by Admin::UsersController#index as HTML
   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
@@ -25606,7 +25775,10 @@ activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
 actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
 actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
 actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+<<<<<<< HEAD
 >>>>>>> dc52b7ed2e88afc3a59aecbded0df2ea882d04af
+=======
+>>>>>>> dc52b7e... fixed routes
 web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
 web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
@@ -25634,6 +25806,7 @@ puma (3.11.4) lib/puma/server.rb:446:in `process_client'
 puma (3.11.4) lib/puma/server.rb:306:in `block in run'
 puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 <<<<<<< HEAD
+<<<<<<< HEAD
 Started GET "/items/without_delivery" for 127.0.0.1 at 2018-06-18 05:41:36 +0300
 Processing by ItemsController#without_delivery as HTML
   Rendering items/without_delivery.html.erb within layouts/application
@@ -25648,6 +25821,9 @@ Started GET "/images/original/missing.png" for 127.0.0.1 at 2018-06-18 05:41:36 
 =======
 Started GET "/images/original/missing.png" for 127.0.0.1 at 2018-06-17 22:25:56 +0300
 >>>>>>> dc52b7ed2e88afc3a59aecbded0df2ea882d04af
+=======
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2018-06-17 22:25:56 +0300
+>>>>>>> dc52b7e... fixed routes
   
 ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
   
@@ -25679,6 +25855,7 @@ puma (3.11.4) lib/puma/server.rb:446:in `process_client'
 puma (3.11.4) lib/puma/server.rb:306:in `block in run'
 puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 <<<<<<< HEAD
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2018-06-18 05:41:38 +0300
 Processing by ItemsController#index as HTML
   Rendering items/index.html.erb within layouts/application
@@ -25688,6 +25865,8 @@ Processing by ItemsController#index as HTML
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
 Completed 200 OK in 109ms (Views: 106.6ms | ActiveRecord: 0.8ms)
 =======
+=======
+>>>>>>> dc52b7e... fixed routes
 Started GET "/admin/users" for 127.0.0.1 at 2018-06-17 22:26:22 +0300
 Processing by Admin::UsersController#index as HTML
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
@@ -25986,6 +26165,55 @@ Processing by ItemsController#new as HTML
   Rendered items/_form.html.erb (12.0ms)
   Rendered items/new.html.erb within layouts/application (16.6ms)
 Completed 200 OK in 86ms (Views: 81.6ms | ActiveRecord: 0.6ms)
+<<<<<<< HEAD
 >>>>>>> dc52b7ed2e88afc3a59aecbded0df2ea882d04af
+=======
+>>>>>>> dc52b7e... fixed routes
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 12:24:47 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (60.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 343ms (Views: 330.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-18 12:24:50 +0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/index.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 131ms (Views: 120.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/items/without_delivery" for 127.0.0.1 at 2018-06-18 12:24:51 +0300
+Processing by ItemsController#without_delivery as HTML
+  Rendering items/without_delivery.html.erb within layouts/application
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."delivered_by" IS NULL ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/without_delivery.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 114ms (Views: 105.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/items/without_buy" for 127.0.0.1 at 2018-06-18 12:24:52 +0300
+Processing by ItemsController#without_buy as HTML
+  Rendering items/without_buy.html.erb within layouts/application
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."bought_by" IS NULL ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered items/without_buy.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 86ms (Views: 79.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2018-06-18 12:24:53 +0300
+Processing by ItemsController#new as HTML
+  Rendering items/new.html.erb within layouts/application
+  Rendered items/_form.html.erb (45.3ms)
+  Rendered items/new.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 110ms (Views: 104.4ms | ActiveRecord: 0.0ms)
 
 
